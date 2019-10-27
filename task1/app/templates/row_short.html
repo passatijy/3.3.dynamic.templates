@@ -1,0 +1,7 @@
+<tr>
+	{% for 'Год' 'Янв' 'Фев' 'Мар' 'Апр' 'Май' 'Июн' 'Июл' 'Авг' 'Сен' 'Окт' 'Ноя' 'Дек' 'Суммарная' in param.items %}
+	<td>{% include 'cell.html' with content= %}</td>
+
+	{% endfor %}
+
+</tr>
