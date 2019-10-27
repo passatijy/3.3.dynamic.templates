@@ -1,7 +1,26 @@
 <tr>
-	{% for 'Год' 'Янв' 'Фев' 'Мар' 'Апр' 'Май' 'Июн' 'Июл' 'Авг' 'Сен' 'Окт' 'Ноя' 'Дек' 'Суммарная' in param.items %}
-	<td>{% include 'cell.html' with content= %}</td>
+	{% for key, values in param.items %}
+	{% if key == "Суммарная" %}
+		<td bgcolor="gray">
+		{{ values }}
+	{% elif values < 0 %}
+		<td bgcolor="green">
+		{{ values }}
+	{% elif values > 5 %}
+		<td bgcolor="#a10000">
+		{{ values }}
+	{% elif values > 2 %}
+		<td bgcolor="#e63232">
+		{{ values }}
+	{% elif values > 1 %}
+		<td bgcolor="#e81010">
+		{{ values }}		
+	{% else %}
+		<td>
+		{{ values }}
+	</td>
 
+	{% endif %}
+	<!--<td>{% include 'cell.html' with content='111' %}</td>-->
 	{% endfor %}
-
 </tr>

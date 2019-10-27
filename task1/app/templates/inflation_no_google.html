@@ -13,31 +13,18 @@
         <h1 class="col s12">Инфляция в России</h1>
         <div class="col s12 m8">
         <br>
-        <p>Request: {{ request.GET }}</p>
-
-        {% for k in mylist %}
-          {% cycle 'red' 'light-red' as color silent %}
-          
-          <li>{{ k }} - {{ color }} </li>
-          
-        {% endfor %}
-
-        {% if mylist|length > 6 %}
-          <br>
-          <p> mylist more than 3 </p>
-        {% endif %}
-        <br>
-        {{ name }} -> {{ name|lower }}
-        <br>
-        {{ name }} -> {{ name|length }}
-
-        <br>
-        {{ 5|aster }}
-        {% for a in articles %}
-        {% include 'article.html' with title=a.title content=a.content %}
-        {% endfor %}
         <!-- Ваша логика -->
-        <table style="width:100%">
+        <table style="width:100%;text-align:center;font-family:courier;">
+          <tr style="font-weight: bold"> 
+            <td>Год</td>
+            <td>Янв</td><td>Фев</td>
+            <td>Мар</td><td>Апр</td>
+            <td>Май</td><td>Июн</td>
+            <td>Июл</td><td>Авг</td>
+            <td>Сен</td><td>Окт</td>
+            <td>Ноя</td><td>Дек</td>
+            <td>Суммарная</td>
+          </tr>
         {% for k in allstat %}
           {% include 'row_short.html' with param=k %}
         {% endfor %}

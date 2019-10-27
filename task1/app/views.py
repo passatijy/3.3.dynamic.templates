@@ -15,8 +15,10 @@ def inflation_view(request):
     print('stat len', len(allstat))
 
     for k in allstat:
-        print('====')
-        print(k)
+        for n in k.keys():
+            print('Key:',n,'value:', k[n], 'type of value',type(k[n]))
+            if k[n] and n != 'Год':
+                k[n]=float(k[n])
     # чтение csv-файла и заполнение контекста
     context = { 'mylist': ['one', 'two', 'tree', 'four', 'five'],
                 'name': 'Test', 'articles':[
